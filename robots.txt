@@ -1,0 +1,5 @@
+# robots.txt · Scencia Pilates Estudio
+User-agent: *
+Allow: /
+
+Sitemap: https://scenciapilates.cl/sitemap.xml

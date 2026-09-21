@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ============ SEO: título y descripción ============ -->
+  <title>Scencia Pilates Estudio · Pilates Reformer en Vitacura</title>
+  <meta name="description" content="Estudio de pilates reformer en Vitacura, Santiago. Planes de 4 a 16 clases al mes y horarios de lunes a sábado. Agenda tu primera clase de prueba, sin costo.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+  <!-- URL definitiva del sitio. Mientras esté en Netlify sin el dominio conectado,
+       esta línea le dice a Google que la versión oficial es scenciapilates.cl y evita
+       que el subdominio .netlify.app compita con tu dominio. NO la borres. -->
+  <link rel="canonical" href="https://scenciapilates.cl/">
+
+  <meta name="theme-color" content="#E5D9CA">
+  <meta name="geo.region" content="CL-RM">
+  <meta name="geo.placename" content="Vitacura, Santiago">
+  <meta name="geo.position" content="-33.3939081;-70.5621447">
+  <meta name="ICBM" content="-33.3939081, -70.5621447">
+
+  <!-- ============ Open Graph (WhatsApp, Instagram, Facebook) ============ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Scencia Pilates Estudio">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:url" content="https://scenciapilates.cl/">
+  <meta property="og:title" content="Scencia Pilates Estudio · Pilates Reformer en Vitacura">
+  <meta property="og:description" content="Clases de pilates reformer en un espacio cálido y tranquilo. Planes desde 4 clases al mes y primera clase de prueba sin costo.">
+  <meta property="og:image" content="https://scenciapilates.cl/assets/og-scencia.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Scencia Pilates Estudio · Pilates reformer en Vitacura">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scencia Pilates Estudio · Pilates Reformer en Vitacura">
+  <meta name="twitter:description" content="Clases de pilates reformer en un espacio cálido y tranquilo. Planes desde 4 clases al mes y primera clase de prueba sin costo.">
+  <meta name="twitter:image" content="https://scenciapilates.cl/assets/og-scencia.jpg">
+
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32">
+  <link rel="icon" href="assets/favicon.png" sizes="256x256">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Tres familias:
+         Cormorant Garamond — títulos y tablas.
+         Jost              — cuerpo general y antetítulos en caja alta.
+         Libre Baskerville — solo la sección "Sobre el estudio".
+       De Baskerville se pide la redonda y la cursiva (ital 0 y 1). La cursiva
+       hay que declararla: sin ella el navegador la inventa inclinando la
+       redonda, y en una serif eso se nota feo. La 700 es la negrita del cierre
+       de la entradilla. Baskerville solo existe en 400 y 700, así que en esa
+       sección no se usa la 300.
+       Ojo: la API css2 exige las familias en orden alfabético. -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Jost:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Paleta ---------- */
+    :root{
+      --roman-plaster:  #E5D9CA;   /* Primario   */
+      --eiffel-for-you: #C8BEB2;   /* Secundario */
+      --cardamom-spice: #6E4630;   /* Terciario  */
+
+      --tinta:   #4A2A20;
+      --crema:   #F3EDE4;
+      --velo:    rgba(245,240,232,.72);
+      --suave:   #7A6A5E;
+
+      --max: 1040px;
+      --radio: 2px;
+    }
+
+    *{ box-sizing: border-box; }
+
+    html{ scroll-behavior: smooth; }
+
+    body{
+      margin: 0;
+      position: relative;
+      background: var(--roman-plaster);
+      color: var(--tinta);
+      font-family: "Jost", "Helvetica Neue", Arial, sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Fondo limewash ---------- */
+    body::before,
+    body::after{
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    body::before{
+      background:
+        radial-gradient(70% 55% at 18% 12%, rgba(247,242,235,.95), rgba(247,242,235,0) 62%),
+        radial-gradient(55% 45% at 88% 8%,  rgba(200,190,178,.40), rgba(200,190,178,0) 60%),
+        radial-gradient(65% 50% at 78% 55%, rgba(250,246,240,.75), rgba(250,246,240,0) 65%),
+        radial-gradient(60% 55% at 8% 72%,  rgba(196,184,170,.34), rgba(196,184,170,0) 62%),
+        radial-gradient(80% 60% at 50% 100%, rgba(184,170,155,.30), rgba(184,170,155,0) 70%),
+        linear-gradient(112deg, rgba(255,252,247,.40) 0%, rgba(255,252,247,0) 38%, rgba(190,177,163,.18) 72%, rgba(255,252,247,.28) 100%),
+        var(--roman-plaster);
+    }
+
+    body::after{
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.011' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0.44 0 0 0 0 0.34 0 0 0 0 0.27 1 0 0 0 -0.42'/%3E%3C/filter%3E%3Crect width='700' height='700' filter='url(%23n)'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0.40 0 0 0 0 0.31 0 0 0 0 0.25 0.35 0 0 0 -0.10'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E");
+      background-size: 1500px 1500px, 220px 220px;
+      background-repeat: repeat, repeat;
+      mix-blend-mode: multiply;
+      opacity: .32;
+    }
+
+    header, main, footer{ position: relative; z-index: 1; }
+
+    .contenedor{
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---------- Portada ---------- */
+    .portada{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 15vh 24px 0;
+    }
+
+    .portada img{
+      width: min(420px, 78vw);
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    /* H1 único de la página: contiene la palabra clave + la comuna */
+    .h1{
+      font-family: "Jost", sans-serif;
+      font-size: clamp(11px, 2.6vw, 13px);
+      font-weight: 400;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--suave);
+      margin: 0 0 26px;
+    }
+
+    .bajada{
+      max-width: 480px;
+      margin: 0 auto 46px;
+      color: var(--suave);
+      font-size: 15px;
+      letter-spacing: .02em;
+    }
+
+    /* ---------- Botones desplegables (planes y horarios) ----------
+       Cada botón es el summary de un <details>: es el único control, y el
+       contenido se despliega justo debajo. Cerrados quedan lado a lado;
+       al abrirse, el que se abre ocupa el ancho completo. */
+    .acciones{
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .desplegable{
+      flex: 0 0 auto;
+      min-width: 0;   /* sin esto el panel abierto no se encoge por debajo del
+                         ancho mínimo de la tabla y desborda la pantalla */
+    }
+
+    .desplegable[open]{ flex: 1 0 100%; }
+
+    .desplegable > summary{
+      list-style: none;
+      cursor: pointer;
+      width: max-content;
+      margin: 0 auto;
+      text-align: center;
+      padding: 16px 38px;
+      border-radius: var(--radio);
+      border: 1px solid var(--cardamom-spice);
+      background: transparent;
+      color: var(--cardamom-spice);
+      transition: background .25s ease, color .25s ease, transform .25s ease;
+    }
+
+    .desplegable > summary::-webkit-details-marker{ display: none; }
+
+    .desplegable > summary h2{
+      margin: 0;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      line-height: 1.7;
+      white-space: nowrap;
+    }
+
+    /* El "Ver" es solo decorativo, para que el botón se lea igual que antes.
+       El encabezado real sigue diciendo "Planes" / "Horarios", que es lo que
+       lee Google. Si no lo quieres, borra estas tres líneas. */
+    .desplegable > summary h2::before{ content: "Ver "; }
+
+    .desplegable > summary:hover{
+      background: var(--cardamom-spice);
+      color: var(--crema);
+    }
+
+    .desplegable > summary:active{ transform: translateY(1px); }
+
+    .desplegable > summary:focus-visible{
+      outline: 2px solid var(--tinta);
+      outline-offset: 3px;
+    }
+
+    /* Abierto: el botón queda relleno, para que se note cuál está desplegado */
+    .desplegable[open] > summary{
+      background: var(--cardamom-spice);
+      color: var(--crema);
+    }
+
+    /* ---------- Secciones ---------- */
+    .seccion{ padding: 20px 24px 70px; }
+
+    #planes-horarios{
+      padding-top: 0;
+      padding-bottom: 14vh;   /* aire antes de la siguiente sección */
+    }
+
+    #planes-horarios:has(.desplegable[open]){ padding-bottom: 70px; }
+
+    .titulo{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(28px, 4.5vw, 40px);
+      font-weight: 400;
+      letter-spacing: .04em;
+      text-align: center;
+      margin: 0 0 6px;
+    }
+
+    .subtitulo{
+      text-align: center;
+      color: var(--suave);
+      font-size: 14px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin: 0 0 48px;
+    }
+
+    /* ---------- Bloques desplegables ----------
+       Usamos el elemento details: el contenido SIEMPRE está en el HTML (Google lo
+       indexa completo) y solo se colapsa visualmente. El encabezado de nivel 2 va
+       dentro del summary, así que los títulos de sección quedan siempre visibles. */
+    .bloque{
+      border-top: 1px solid var(--eiffel-for-you);
+      padding-top: 34px;
+    }
+
+    .bloque > summary{
+      list-style: none;
+      cursor: pointer;
+      text-align: center;
+      padding-bottom: 6px;
+    }
+
+    .bloque > summary::-webkit-details-marker{ display: none; }
+
+    .bloque > summary:focus-visible{
+      outline: 2px solid var(--tinta);
+      outline-offset: 6px;
+    }
+
+    .bloque > summary .titulo{ margin-bottom: 4px; }
+
+    .bloque > summary:hover .titulo{ color: var(--cardamom-spice); }
+
+    .pista{
+      display: inline-block;
+      color: var(--suave);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--eiffel-for-you);
+      padding-bottom: 3px;
+    }
+
+    .bloque[open] > summary .pista::after{ content: " —"; }
+
+    .cuerpo{ padding-top: 42px; }
+
+    /* ---------- Planes ---------- */
+    .aviso{
+      display: block;
+      text-align: center;
+      border: 1px solid var(--cardamom-spice);
+      border-radius: var(--radio);
+      background: var(--velo);
+      padding: 18px 24px;
+      margin: 0 auto 34px;
+      max-width: 560px;
+    }
+
+    .aviso strong{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--cardamom-spice);
+      display: block;
+    }
+
+    .aviso span{
+      font-size: 14px;
+      color: var(--suave);
+    }
+
+    /* Los precios se veían desordenados porque Cormorant Garamond usa por
+       defecto cifras de ESTILO ANTIGUO: cada dígito tiene altura y ancho
+       distintos (el 6 sube, el 3 y el 9 bajan bajo la línea base, el 1 es la
+       mitad de ancho que el 8). Son preciosas dentro de un texto corrido y
+       pésimas en una tabla.
+
+       La fuente sí trae las dos variantes que hacen falta, solo que apagadas:
+         lining-nums   → todos los dígitos a la misma altura
+         tabular-nums  → todos del mismo ancho (491 unidades), así los puntos
+                         de miles quedan alineados en columna
+       Con esto no hay que cambiar de tipografía ni cargar una fuente más.
+
+       El text-align: right alinea los valores por la derecha, que es como se
+       leen los números: "$60.000" tiene un dígito menos que el resto y, a la
+       izquierda, era el que más desalineado se veía. */
+    .valor{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 21px;
+      font-variant-numeric: lining-nums tabular-nums;
+      color: var(--cardamom-spice);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* El valor por mes que va bajo el total del trimestre y del semestre.
+       Es el MISMO número, dicho de otra forma: el total dividido por los meses
+       del período. Sirve para comparar de un vistazo contra la fila "Mes", que
+       es la pregunta que hace todo el mundo frente a esta tabla.
+
+       Va en un <span> aparte, en bloque, para que caiga bajo su precio sin
+       romper la alineación de la columna. Hereda lining-nums y tabular-nums
+       de .valor, así que los puntos de miles siguen cuadrando entre filas.
+
+       Si cambia un precio del trimestre o del semestre, este número cambia
+       con él: trimestre / 3 y semestre / 6. Cuando la división no da exacta
+       se cortan los decimales, sin redondear (ej. $640.000 / 6 → $106.666).
+
+       Debajo va una segunda línea con el total de clases del período:
+       clases al mes x 3 en el trimestre, x 6 en el semestre. */
+    .valor-mes{
+      display: block;
+      margin-top: 3px;
+      font-size: 13px;
+      color: var(--suave);
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    /* Los encabezados de las columnas de precio siguen a sus valores. */
+    .tabla-planes thead th:not(:first-child){ text-align: right; }
+
+    .nota{
+      text-align: center;
+      color: var(--suave);
+      font-size: 13px;
+      margin-top: 30px;
+    }
+
+    main a{
+      color: var(--cardamom-spice);
+      text-decoration: none;
+      border-bottom: 1px solid var(--eiffel-for-you);
+      transition: border-color .25s ease;
+    }
+
+    main a:hover{ border-color: var(--cardamom-spice); }
+
+    /* ---------- Tablas ---------- */
+    .tabla-scroll{ overflow-x: auto; }
+
+    table{
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      background: var(--velo);
+      border: 1px solid var(--eiffel-for-you);
+    }
+
+    caption{
+      caption-side: top;
+      text-align: center;
+      color: var(--suave);
+      font-size: 13px;
+      padding-bottom: 14px;
+    }
+
+    th, td{
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--eiffel-for-you);
+      font-size: 14px;
+    }
+
+    thead th{
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--crema);
+      background: var(--cardamom-spice);
+      border-bottom: none;
+    }
+
+    tbody th{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 19px;
+      font-weight: 500;
+      width: 130px;
+      white-space: nowrap;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td{ border-bottom: none; }
+
+    .cerrado{
+      color: var(--suave);
+      font-style: italic;
+    }
+
+    .tabla-horarios{ min-width: 520px; }
+
+    .tabla-horarios tbody th{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+      font-weight: 500;
+      width: 140px;
+    }
+
+    .tabla-horarios td{
+      letter-spacing: .04em;
+      color: var(--tinta);
+      /* Estas horas van en Jost, que ya trae las cifras a la misma altura;
+         tabular-nums es para que las filas queden alineadas entre sí, porque
+         un "1" más angosto corría toda la línea. */
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- Reservas ---------- */
+    .reservas{
+      margin-top: 46px;
+      text-align: center;
+      border-top: 1px solid var(--eiffel-for-you);
+      padding-top: 44px;
+    }
+
+    .reservas-titulo{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 400;
+      margin: 0 0 4px;
+    }
+
+    .reservas p{
+      max-width: 520px;
+      margin: 0 auto;
+      color: var(--suave);
+      font-size: 15px;
+    }
+
+    /* ---------- Ubicación ---------- */
+    .ubicacion-datos{
+      text-align: center;
+      margin: 0 auto 34px;
+      max-width: 560px;
+    }
+
+    .direccion{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(21px, 3vw, 26px);
+      font-weight: 400;
+      color: var(--cardamom-spice);
+      margin: 0 0 6px;
+      font-style: normal;
+    }
+
+    .direccion-detalle{
+      color: var(--suave);
+      font-size: 14px;
+      letter-spacing: .06em;
+      margin: 0 0 24px;
+    }
+
+    .mapa{
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      /* Dos degradados cruzados difuminan los cuatro bordes contra la pintura
+         a la cal: se acaba el rectángulo pegado. */
+      -webkit-mask-image:
+        linear-gradient(to right,  transparent 0, #000 14%, #000 86%, transparent 100%),
+        linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+              mask-image:
+        linear-gradient(to right,  transparent 0, #000 14%, #000 86%, transparent 100%),
+        linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%);
+      -webkit-mask-composite: source-in;
+              mask-composite: intersect;
+    }
+
+    .mapa iframe{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      /* Tiñe el mapa hacia los tonos de la marca en vez del azul/blanco de Google */
+      filter: grayscale(1) sepia(.6) saturate(.7) hue-rotate(-8deg) brightness(1.07) contrast(.9);
+      transition: filter .45s ease;
+    }
+
+    /* Difumina los bordes hacia el fondo de la página: quita el efecto "recorte pegado" */
+    .mapa::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(78% 78% at 50% 50%, rgba(229,217,202,0) 45%, rgba(229,217,202,.55) 100%);
+      transition: opacity .45s ease;
+    }
+
+    /* Al pasar el mouse o al usarlo, el mapa recupera nitidez */
+    .mapa:hover iframe,
+    .mapa:focus-within iframe{
+      filter: grayscale(.15) sepia(.1) saturate(.95) brightness(1.02) contrast(.98);
+    }
+
+    .mapa:hover::after,
+    .mapa:focus-within::after{ opacity: .25; }
+
+    @media (max-width: 600px){
+      .mapa{ aspect-ratio: 4 / 3; }
+    }
+
+    /* ---------- Preguntas frecuentes ---------- */
+    .faq{
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .faq-item{
+      border-bottom: 1px solid var(--eiffel-for-you);
+    }
+
+    .faq-item > summary{
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 34px 20px 0;
+      position: relative;
+      font-size: 16px;
+      letter-spacing: .01em;
+      color: var(--tinta);
+    }
+
+    .faq-item > summary::-webkit-details-marker{ display: none; }
+
+    .faq-item > summary::after{
+      content: "+";
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--cardamom-spice);
+      line-height: 1;
+    }
+
+    .faq-item[open] > summary::after{ content: "–"; }
+
+    .faq-item > summary:hover{ color: var(--cardamom-spice); }
+
+    .faq-item > summary:focus-visible{
+      outline: 2px solid var(--tinta);
+      outline-offset: 2px;
+    }
+
+    .faq-item p{
+      margin: 0 0 22px;
+      color: var(--suave);
+      font-size: 15px;
+      padding-right: 34px;
+    }
+
+    /* ---------- Sobre el estudio ----------
+       Se quitaron los filetes: no queda ni una línea ni un recuadro. La
+       jerarquía la dan el aire, la alineación y el color. Los cuatro bloques
+       van en la MISMA tipografía (Libre Baskerville) y al MISMO tamaño
+       (var(--texto)): nada de esta sección va en Jost ni en Cormorant, y no
+       hay saltos de cuerpo. Los tres bloques de texto van JUSTIFICADOS en la
+       misma columna, así que sus dos márgenes caen en la misma vertical. Lo
+       único que distingue a cada bloque es su color, la caja alta del
+       antetítulo, la cursiva del cierre y la negrita del remate.
+
+         1· Antetítulo — caja alta espaciada, en el terciario.
+         2· Entradilla — Libre Baskerville en redonda, tinta plena, y continúa
+                         la frase del antetítulo: "Scencia nace de… / dos
+                         miradas distintas". Por eso empieza en minúscula: es
+                         la misma oración.
+         3· Cuerpo     — Libre Baskerville, a la izquierda, en gris.
+         4· Cierre     — la única cursiva, y el único color de la sección.
+
+       Toda la sección va en Libre Baskerville salvo el antetítulo, que sigue en
+       Jost porque replica el "PILATES ESTUDIO" del logo. Baskerville tiene la
+       letra mucho más grande que Cormorant al mismo cuerpo, así que los tamaños
+       de esta sección es más chica que en el resto de la página: si se sube,
+       el bloque se ve pesado.
+
+       Entradilla y cierre no llevan <strong>: en una línea grande el cambio de
+       tono se ve como una mancha. La línea completa ya es el énfasis.
+
+       Los tres bloques comparten el ancho --columna. Ese es el orden de la
+       sección: si uno queda más angosto que los otros, sus bordes dejan de
+       calzar y el conjunto se ve suelto. */
+    .texto-sobre{
+      font-family: "Libre Baskerville", Georgia, serif;
+      /* Entradilla, cuerpo y cierre comparten este ancho. Es lo que ordena la
+         sección: los tres bloques caen en la misma columna, así que sus bordes
+         izquierdo y derecho coinciden aunque unos vayan centrados y el otro a
+         la izquierda. Con anchos distintos el bloque de texto queda flotando
+         y la sección se ve desalineada. */
+      --columna: 560px;
+      /* UN SOLO TAMAÑO para toda la sección: antetítulo, entradilla, cuerpo y
+         cierre miden lo mismo. Se cambia aquí y se mueven los cuatro juntos. */
+      --texto: 16px;
+      max-width: 640px;
+      margin: 0 auto;
+      /* Un punto más oscuro que --suave: sobre el beige del fondo, el gris
+         original quedaba en 3.7:1 de contraste y se leía lavado. */
+      color: #6B5A4E;
+      /* Baskerville no tiene 300: su peso de texto es el 400. */
+      font-weight: 400;
+    }
+
+    /* 1· Antetítulo. Va en minúscula en el HTML y se sube a caja alta desde
+       aquí, para que un lector de pantalla no lo deletree letra por letra.
+       El text-indent compensa el espaciado que queda colgando después de la
+       última letra: sin él, el texto se ve corrido a la izquierda del centro. */
+    .texto-sobre h3{
+      /* En caja alta la letra se ve más grande que en minúscula al mismo
+         número de px, así que este va al 87% para que OJO A OJO mida igual
+         que el resto. Si se pone en var(--texto) a secas, el antetítulo
+         vuelve a verse más grande que el párrafo. */
+      font-size: calc(var(--texto) * .87);
+      font-weight: 400;
+      text-transform: uppercase;
+      /* Menos espaciado que antes (.34em): la caja alta de Baskerville es más
+         ancha que la de Jost y con tanto aire las palabras se despegaban. */
+      letter-spacing: .26em;
+      /* El espaciado cuelga también después de la ÚLTIMA letra, así que al
+         centrar, la línea queda corrida a la izquierda. Se compensa con la
+         MITAD del espaciado: con el valor entero se pasaba para el otro lado. */
+      text-indent: .13em;
+      line-height: 1.7;
+      /* El terciario en vez del gris: es el mismo tono del cierre de la
+         sección, así el bloque abre y cierra con el color de la marca.
+         Sobre el beige da 5.9:1, de sobra para 13px. */
+      color: var(--cardamom-spice);
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    /* 2· Entradilla. Redonda, no cursiva, y en el MISMO gris y el mismo peso
+       que el cuerpo de abajo: lo único que la separa es el tamaño. Antes iba en
+       tinta plena y se veía más gruesa que el párrafo que la sigue. El único
+       contraste de la sección es el <strong> del final. */
+    .sobre-entrada{
+      font-size: var(--texto);
+      font-weight: 400;
+      line-height: 1.7;
+      letter-spacing: 0;
+      /* Justificado: los dos márgenes quedan rectos, así que todas las líneas
+         empiezan y terminan en el mismo punto. La última línea de cada párrafo
+         va centrada: es la única que no se puede estirar sin abrir huecos.
+
+         NO se usan guiones automáticos. Cortaban palabras al final de la línea
+         ("Quere-mos", "cuer-po") y eso se lee como un error. A cambio, la
+         columna es ancha (ver --columna): con más letras por línea el
+         justificado reparte los espacios sin que se noten. Si se angosta la
+         columna, vuelven los huecos entre palabras. */
+      text-align: justify;
+      text-align-last: center;
+      max-width: var(--columna);
+      margin: 0 auto 48px;
+    }
+
+    /* 3· Cuerpo. Centrado, igual que los otros tres bloques: la sección
+       completa se lee sobre un mismo eje. Va en la misma columna que la
+       entradilla y el cierre, así que las cuatro cajas miden lo mismo. */
+    .sobre-cuerpo{
+      max-width: var(--columna);
+      margin: 0 auto;
+      /* Justificado: los dos márgenes quedan rectos, así que todas las líneas
+         empiezan y terminan en el mismo punto. La última línea de cada párrafo
+         va centrada: es la única que no se puede estirar sin abrir huecos.
+
+         NO se usan guiones automáticos. Cortaban palabras al final de la línea
+         ("Quere-mos", "cuer-po") y eso se lee como un error. A cambio, la
+         columna es ancha (ver --columna): con más letras por línea el
+         justificado reparte los espacios sin que se noten. Si se angosta la
+         columna, vuelven los huecos entre palabras. */
+      text-align: justify;
+      text-align-last: center;
+    }
+
+    .sobre-cuerpo p{
+      margin: 0 0 20px;
+      font-size: var(--texto);
+      /* 1.8 dejaba las líneas demasiado sueltas: a este ancho el párrafo se
+         desarmaba en renglones sin relación entre sí. */
+      line-height: 1.7;
+      letter-spacing: 0;
+    }
+
+    .sobre-cuerpo p:last-child{ margin-bottom: 0; }
+
+    /* 4· Cierre. Es la única cursiva de la sección y el único color: por eso
+       remata la lectura sin necesitar ni línea ni recuadro. */
+    .sobre-cierre{
+      font-style: italic;
+      font-size: var(--texto);
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--cardamom-spice);
+      /* Justificado: los dos márgenes quedan rectos, así que todas las líneas
+         empiezan y terminan en el mismo punto. La última línea de cada párrafo
+         va centrada: es la única que no se puede estirar sin abrir huecos.
+
+         NO se usan guiones automáticos. Cortaban palabras al final de la línea
+         ("Quere-mos", "cuer-po") y eso se lee como un error. A cambio, la
+         columna es ancha (ver --columna): con más letras por línea el
+         justificado reparte los espacios sin que se noten. Si se angosta la
+         columna, vuelven los huecos entre palabras. */
+      text-align: justify;
+      text-align-last: center;
+      max-width: var(--columna);
+      margin: 48px auto 0;
+    }
+
+    /* Énfasis sin negrita: mismo peso, tinta plena sobre el gris del cuerpo.
+       Solo aplica al cuerpo, que es el único de los tres que usa <strong>. */
+    .texto-sobre strong{
+      font-weight: 400;
+      color: var(--tinta);
+    }
+
+    /* Esta sí es negrita de verdad. Va después de la regla de arriba a
+       propósito: las dos tienen la misma especificidad y gana la última. */
+    .sobre-entrada strong{
+      font-weight: 700;
+      color: var(--tinta);
+    }
+
+    /* ---------- Pie ---------- */
+    footer{
+      border-top: 1px solid var(--eiffel-for-you);
+      padding: 46px 0 54px;
+      text-align: center;
+      color: var(--suave);
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+
+    footer p{ margin: 0 0 8px; }
+
+    footer a{
+      color: var(--cardamom-spice);
+      text-decoration: none;
+      border-bottom: 1px solid var(--eiffel-for-you);
+    }
+
+    footer a:hover{ border-color: var(--cardamom-spice); }
+
+    .marca{
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 20px;
+      letter-spacing: .3em;
+      color: var(--tinta);
+      margin-bottom: 4px !important;
+    }
+
+    .marca-bajada{
+      font-size: 11px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 20px !important;
+    }
+
+    /* Texto que se saca de la vista pero sigue existiendo para Google y para
+       los lectores de pantalla. Se usa en el H1 de la portada y en el
+       resumen de la tabla de horarios. */
+    .footer-h2,
+    .solo-lectores{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .legal{
+      margin-top: 24px !important;
+      font-size: 11px;
+      letter-spacing: .08em;
+      color: var(--eiffel-for-you);
+    }
+
+    /* ---------- WhatsApp ----------
+       El icono usa el color de la paleta (--cardamom-spice), no el verde de
+       la marca WhatsApp: el glifo ya se reconoce solo y así no rompe la
+       gama del sitio. Para usar el verde oficial, cambia el background a
+       #25D366 y el color a #fff en .wsp-flotante. */
+
+    /* (a) Botón dentro del recuadro de la clase de prueba */
+    .cta-wsp{
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 14px;
+      padding: 10px 20px;
+      border: 1px solid var(--cardamom-spice);
+      border-radius: 999px;
+      color: var(--cardamom-spice);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: background-color .25s ease, color .25s ease;
+    }
+
+    .cta-wsp svg{
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex: none;
+    }
+
+    .cta-wsp:hover{
+      background: var(--cardamom-spice);
+      color: var(--crema);
+    }
+
+    .cta-wsp:focus-visible{
+      outline: 2px solid var(--tinta);
+      outline-offset: 3px;
+    }
+
+    /* (b) Botón flotante, presente en toda la página */
+    .wsp-flotante{
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 50;
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--cardamom-spice);
+      color: var(--crema);
+      box-shadow: 0 6px 20px rgba(74, 42, 32, .28);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .wsp-flotante svg{
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+    }
+
+    .wsp-flotante:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 10px 26px rgba(74, 42, 32, .34);
+    }
+
+    .wsp-flotante:focus-visible{
+      outline: 2px solid var(--tinta);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .cta-wsp,
+      .wsp-flotante{ transition: none; }
+      .wsp-flotante:hover{ transform: none; }
+    }
+
+    @media (max-width: 600px){
+      .portada{ padding-top: 11vh; }
+
+      .wsp-flotante{ right: 16px; bottom: 16px; width: 50px; height: 50px; }
+      /* En celular los dos botones se reparten el ancho, lado a lado */
+      .acciones{ gap: 12px; }
+
+      .desplegable{ flex: 1 1 0; }
+
+      .desplegable > summary{
+        width: 100%;
+        padding: 15px 8px;
+      }
+
+      .desplegable > summary h2{
+        font-size: 11px;
+        letter-spacing: .1em;
+      }
+      .seccion{ padding: 20px 24px 56px; }
+
+      /* En pantalla angosta los 54px entre bloques dejan la sección demasiado
+         suelta y obligan a scrollear de más. */
+      .sobre-entrada{ margin-bottom: 40px; }
+      .sobre-cierre{ margin-top: 40px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      html{ scroll-behavior: auto; }
+      *{ transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="portada">
+    <picture>
+      <source srcset="assets/logo-scencia.webp" type="image/webp">
+      <img src="assets/logo-scencia.png" width="670" height="240"
+           alt="Scencia Pilates Estudio, estudio de pilates reformer en Vitacura"
+           fetchpriority="high" decoding="async">
+    </picture>
+
+    <!-- H1 único de toda la página -->
+    <!-- El H1 no se ve: la portada la encabeza el logo. Sigue en el HTML
+         porque es el título que Google usa para posicionar la página; si se
+         borra del todo, el sitio se queda sin encabezado principal. -->
+    <h1 class="h1 solo-lectores">Estudio de pilates reformer en Vitacura</h1>
+
+    <p class="bajada">Clases de pilates reformer en un espacio cálido y tranquilo, para moverte con conciencia y a tu propio ritmo.</p>
+  </header>
+
+  <main>
+    <!-- ========================= PLANES Y HORARIOS =========================
+         Los dos botones son el único control: cada uno es el summary de su
+         details y despliega la información justo debajo. El contenido está
+         siempre presente en el HTML, así que Google lo indexa completo. -->
+    <section class="seccion contenedor" id="planes-horarios" aria-label="Planes y horarios">
+      <div class="acciones">
+
+        <details class="desplegable" id="planes">
+          <summary><h2>Planes</h2></summary>
+          <div class="cuerpo">
+              <p class="aviso">
+                <strong>Primera clase de prueba sin costo</strong>
+                <span>Ven a conocer el estudio y prueba una clase de reformer, gratis.</span>
+
+                <!-- WHATSAPP (a) · El número va como código de país sin el +,
+                     sin espacios ni guiones: +56 9 8765 4321 -> 56987654321 -->
+                <a class="cta-wsp" href="https://wa.me/56930267255?text=Hola%2C%20quiero%20agendar%20mi%20clase%20de%20prueba%20gratis"
+                   target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.89-9.88 9.89M20.46 3.49A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.69 1.45c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 00-3.48-8.42"/></svg>
+                  Agendar por WhatsApp
+                </a>
+              </p>
+
+              <!-- ================= CÓMO CAMBIAR PRECIOS O PLANES =================
+                   Un precio NO vive en un solo lugar. Cada vez que cambie un
+                   valor, o que se agregue o se quite un plan, hay que revisar
+                   los cuatro puntos de esta lista. Si se toca solo la tabla, el
+                   sitio queda contradiciéndose a sí mismo.
+
+                   1. LA TABLA DE AQUÍ ABAJO.
+                      Encabezados = clases por mes. Filas = duración.
+                      Los porcentajes de descuento ya no se muestran. Hoy el
+                      trimestre está a ~10% y el semestre a ~20% del valor mensual
+                      (los precios van redondeados, así que varía entre planes):
+                        trimestre:  1 - (precio_trimestre / (precio_mes x 3))
+                        semestre:   1 - (precio_semestre / (precio_mes x 6))
+                      Si se vuelven a mostrar, el rótulo tiene que cuadrar con
+                      esa cuenta. Un descuento mal calculado en un precio es un
+                      problema con la clienta, no un detalle de diseño.
+
+                      Cada celda de trimestre y de semestre lleva ADEMÁS, en un
+                      <span class="valor-mes">, cuánto sale al mes: el total
+                      dividido por 3 o por 6. Es el mismo precio dicho de otra
+                      forma, así que si se cambia el total hay que rehacer esa
+                      división en la misma edición. Un total nuevo con el valor
+                      mensual viejo se lee como dos precios distintos para el
+                      mismo plan. La fila "Mes" no lo lleva: ahí el total y el
+                      valor mensual son el mismo número.
+
+                   2. EL "hasOfferCatalog" DEL JSON-LD, al final del archivo.
+                      Una oferta por cada celda de la tabla, mismo orden,
+                      precios sin puntos ni signo peso ("150000").
+
+                   3. EL RANGO "de 4 a N clases al mes", que aparece TRES veces:
+                        - <meta name="description"> en el <head>
+                        - "description" del negocio en el JSON-LD
+                        - "description" de la WebPage en el JSON-LD
+                      Si se agrega o quita una columna, hay que actualizarlo.
+
+                   4. LA FICHA DE GOOGLE BUSINESS PROFILE, que es externa a
+                      este archivo: su descripción también menciona los planes.
+                      maps.google.com/?cid=4745653765668886483
+
+                   PARA COMPROBAR QUE TODO QUEDÓ COHERENTE hay un verificador
+                   automático que revisa los puntos 1, 2 y 3 de esta lista:
+
+                       Escritorio / Scencia - herramientas / verificar.py
+
+                   Está fuera de esta carpeta a propósito, porque esta carpeta
+                   se arrastra completa a Netlify y todo lo que esté dentro
+                   queda publicado en internet. Se ejecuta con:
+
+                       python verificar.py
+
+                   Si no tienes Python a mano, pídeselo a Claude: puede leer la
+                   tabla y el JSON-LD y compararlos celda por celda.
+                   ================================================================ -->
+              <div class="tabla-scroll">
+                <table class="tabla-planes">
+                  <caption>Valor total del período, según las clases que tomes al mes. Entre paréntesis, cuánto sale cada mes, y el total de clases del período.</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Plan</th>
+                      <th scope="col">4 clases</th>
+                      <th scope="col">8 clases</th>
+                      <th scope="col">12 clases</th>
+                      <th scope="col">16 clases</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Mes</th>
+                      <td class="valor">$56.000</td>
+                      <td class="valor">$103.000</td>
+                      <td class="valor">$134.000</td>
+                      <td class="valor">$155.000</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Trimestre</th>
+                      <td class="valor">$150.000<span class="valor-mes">($50.000/mes)</span><span class="valor-mes">Total: 12 clases</span></td>
+                      <td class="valor">$280.000<span class="valor-mes">($93.333/mes)</span><span class="valor-mes">Total: 24 clases</span></td>
+                      <td class="valor">$360.000<span class="valor-mes">($120.000/mes)</span><span class="valor-mes">Total: 36 clases</span></td>
+                      <td class="valor">$420.000<span class="valor-mes">($140.000/mes)</span><span class="valor-mes">Total: 48 clases</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Semestre</th>
+                      <td class="valor">$270.000<span class="valor-mes">($45.000/mes)</span><span class="valor-mes">Total: 24 clases</span></td>
+                      <td class="valor">$495.000<span class="valor-mes">($82.500/mes)</span><span class="valor-mes">Total: 48 clases</span></td>
+                      <td class="valor">$640.000<span class="valor-mes">($106.666/mes)</span><span class="valor-mes">Total: 72 clases</span></td>
+                      <td class="valor">$745.000<span class="valor-mes">($124.166/mes)</span><span class="valor-mes">Total: 96 clases</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+          </div>
+        </details>
+
+        <details class="desplegable" id="horarios">
+          <summary><h2>Horarios</h2></summary>
+          <div class="cuerpo">
+              <div class="tabla-scroll">
+                <table class="tabla-horarios">
+                  <caption class="solo-lectores">Horarios de clases por día</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Día</th>
+                      <th scope="col">AM</th>
+                      <th scope="col">PM</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Lunes</th>
+                      <td>07:00 · 08:00 · 09:00 · 10:00 · 11:00</td>
+                      <td>17:00 · 18:00 · 19:00 · 20:00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Martes</th>
+                      <td>08:00 · 09:00 · 10:00 · 11:00</td>
+                      <td>17:00 · 18:00 · 19:00 · 20:00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Miércoles</th>
+                      <td>07:00 · 08:00 · 09:00 · 10:00 · 11:00</td>
+                      <td>17:00 · 18:00 · 19:00 · 20:00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Jueves</th>
+                      <td>08:00 · 09:00 · 10:00 · 11:00</td>
+                      <td>17:00 · 18:00 · 19:00 · 20:00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Viernes</th>
+                      <td>07:00 · 08:00 · 09:00 · 10:00 · 11:00</td>
+                      <td>17:00 · 18:00</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Sábado</th>
+                      <td>09:00 · 10:00 · 11:00 · 12:00</td>
+                      <td class="cerrado">Sin clases</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Domingo</th>
+                      <td class="cerrado" colspan="2">Cerrado</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p class="nota">Cancela con al menos dos horas de antelación y tu clase queda intacta.</p>
+
+              <div class="reservas">
+                <h3 class="reservas-titulo">Reservas y planes</h3>
+                <p>Puedes comprar tu plan en el estudio o desde nuestra aplicación, y las reservas se gestionan siempre desde la app. Nosotras te ayudamos a registrarte cuando vengas a tu primera clase.</p>
+              </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ========================= SOBRE EL ESTUDIO ========================= -->
+    <section class="seccion contenedor" id="sobre" aria-labelledby="t-sobre">
+      <details class="bloque" id="d-sobre">
+        <summary>
+          <h2 class="titulo" id="t-sobre">Sobre el estudio</h2>
+          <span class="pista">Conoce Scencia</span>
+        </summary>
+
+        <div class="cuerpo texto-sobre">
+          <!-- 1· Antetítulo. Se escribe en minúscula y el CSS lo sube a caja
+               alta. No le pongas el texto en MAYÚSCULAS aquí: los lectores de
+               pantalla lo deletrearían letra por letra. -->
+          <h3>Scencia nace de…</h3>
+
+          <!-- 2· Entradilla. El <strong> del final es el único énfasis de la
+               sección: va en negrita de verdad (700). El resto de la frase
+               tiene exactamente el mismo tono y grosor que el cuerpo de abajo,
+               así que la negrita se lee como el remate de la idea. -->
+          <p class="sobre-entrada">Dos miradas distintas sobre el deporte, pero una misma convicción: <strong>moverse también debe ser disfrutar.</strong></p>
+
+          <!-- 3· Cuerpo -->
+          <div class="sobre-cuerpo">
+            <p>Creamos SCENCIA desde la idea de que <strong>hacer ejercicio no tiene por qué sentirse como una obligación.</strong> Queremos que cada clase sea un momento para desconectarte de lo cotidiano, despejar la mente, conectar con tu cuerpo y, sobre todo, pasarlo bien.</p>
+
+            <p>Creemos en un Pilates que desafía, que fortalece y que transforma, pero que también se disfruta.</p>
+          </div>
+
+          <!-- 4· Cierre -->
+          <p class="sobre-cierre">Porque, al final, entrenar también puede ser tu momento&nbsp;del&nbsp;día.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ========================= UBICACIÓN (siempre visible) ========================= -->
+    <section class="seccion contenedor" id="ubicacion" aria-labelledby="t-ubicacion">
+      <h2 class="titulo" id="t-ubicacion">Ubicación</h2>
+      <p class="subtitulo">Vitacura, Santiago</p>
+
+      <div class="ubicacion-datos">
+        <!-- NAP: esta dirección debe escribirse EXACTAMENTE igual en tu ficha de
+             Google Business Profile y en el JSON-LD del final del archivo. -->
+        <address class="direccion">Gerónimo de Alderete 1070, Vitacura</address>
+        <p class="direccion-detalle">Región Metropolitana, Santiago de Chile</p>
+      </div>
+
+      <div class="mapa">
+        <iframe
+          title="Mapa de la ubicación de Scencia Pilates Estudio en Gerónimo de Alderete 1070, Vitacura"
+          src="https://www.google.com/maps?q=-33.3939081,-70.5621447&hl=es&z=17&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+
+      <p class="nota">
+        <a href="https://maps.google.com/?cid=4745653765668886483" target="_blank" rel="noopener">Abrir en Google Maps y trazar la ruta</a>
+      </p>
+    </section>
+
+    <!-- ========================= PREGUNTAS FRECUENTES ========================= -->
+    <section class="seccion contenedor" id="preguntas" aria-labelledby="t-faq">
+      <details class="bloque" id="d-faq">
+        <summary>
+          <h2 class="titulo" id="t-faq">Preguntas frecuentes</h2>
+          <span class="pista">Antes de tu primera clase</span>
+        </summary>
+
+        <div class="cuerpo">
+          <div class="faq">
+            <!-- IMPORTANTE: si cambias, agregas o borras una pregunta, haz lo mismo
+                 en el bloque FAQPage del JSON-LD al final del archivo. Las dos listas
+                 deben decir exactamente lo mismo: si no coinciden, Google considera
+                 el marcado engañoso y deja de mostrar las preguntas en los resultados. -->
+
+            <details class="faq-item">
+              <summary>¿Qué tipo de pilates se practica en Scencia?</summary>
+              <p>Trabajamos exclusivamente pilates reformer, en clases de 50 minutos.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Tiene costo la primera clase?</summary>
+              <p>No. La primera clase de prueba es sin costo, para que conozcas el estudio y el trabajo en reformer antes de tomar un plan.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Cómo reservo mi hora?</summary>
+              <p>Puedes comprar tu plan en el estudio o desde nuestra aplicación, y las reservas se gestionan siempre desde la app. Nosotras te ayudamos a registrarte cuando vengas a tu primera clase.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Qué pasa si no puedo asistir a una clase?</summary>
+              <p>Puedes cancelar desde la aplicación. Las cancelaciones con menos de 2 horas de anticipación descuentan la clase del plan.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Necesito experiencia previa en pilates?</summary>
+              <p>No. No necesitas experiencia previa: las clases se adaptan a tu nivel desde el primer día y te guiamos en cada ejercicio.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Qué ropa debo usar y qué tengo que llevar?</summary>
+              <p>Ropa cómoda de deporte. Lo ideal es venir con calcetines antideslizantes, que son los que se usan sobre el reformer.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Cuántas personas hay por clase?</summary>
+              <p>Las clases son de máximo 8 personas, para que puedas recibir corrección y acompañamiento durante toda la sesión.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Puedo tomar clases si estoy embarazada o tengo una lesión?</summary>
+              <p>Sí, en ambos casos. Adaptamos y dirigimos los ejercicios según tu condición. Cuéntanos tu situación antes de la clase para acompañarte de la mejor manera.</p>
+            </details>
+
+            <details class="faq-item">
+              <summary>¿Hay estacionamiento cerca del estudio?</summary>
+              <p>Sí. Hay estacionamiento en el mismo strip center y también en las calles del sector: Fernando de Argüello, Juan de Escaray y Pedro de Arbolancha, entre otras.</p>
+            </details>
+          </div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <div class="contenedor">
+      <h2 class="footer-h2">Contacto</h2>
+
+      <!-- NAP consistente: mismo nombre, dirección y (a futuro) teléfono
+           que en Google Business Profile. -->
+      <p class="marca">SCENCIA</p>
+      <p class="marca-bajada">Pilates Estudio</p>
+
+      <p><a href="https://maps.google.com/?cid=4745653765668886483" target="_blank" rel="noopener">Gerónimo de Alderete 1070, Vitacura, Santiago</a></p>
+      <p><a href="mailto:scenciapilates@gmail.com">scenciapilates@gmail.com</a></p>
+
+      <!-- WHATSAPP (c) · Contacto solo por WhatsApp: no se muestra el número
+           marcable para evitar llamadas. El teléfono sigue declarado en
+           "telephone" del JSON-LD para el SEO local (debe coincidir con la
+           ficha de Google Business Profile). -->
+      <p><a href="https://wa.me/56930267255?text=Hola%2C%20quiero%20agendar%20mi%20clase%20de%20prueba" target="_blank" rel="noopener">Escríbenos por WhatsApp</a></p>
+
+      <!-- REDES SOCIALES · este enlace va también en "sameAs" del JSON-LD.
+           Cuando exista la ficha de Google Business Profile, agrega su URL
+           al mismo "sameAs" para que Google una las dos identidades. -->
+      <p><a href="https://www.instagram.com/scenciapilates/" target="_blank" rel="noopener">Instagram · @scenciapilates</a></p>
+
+      <p class="legal">Pilates reformer en Vitacura, Santiago</p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP (b) · Botón flotante, visible en toda la página -->
+  <a class="wsp-flotante" href="https://wa.me/56930267255?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20las%20clases"
+     target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.87 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.12-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.89 9.89-9.89 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 012.89 6.99c0 5.45-4.44 9.89-9.88 9.89M20.46 3.49A11.82 11.82 0 0012.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 005.69 1.45c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 00-3.48-8.42"/></svg>
+  </a>
+
+  <!-- ================= DATOS ESTRUCTURADOS · Schema.org =================
+       Esto es lo que le permite a Google mostrar tu dirección, horario y mapa
+       directamente en los resultados. Valídalo en:
+       https://search.google.com/test/rich-results
+
+       OJO: dentro del <script> de abajo NO se pueden escribir comentarios. Es
+       JSON puro y cualquier /* */ o // lo rompe entero.
+
+       ⚠ PRECIOS: el "hasOfferCatalog" de abajo repite, una por una, las celdas
+       de la tabla visible. Tiene que haber exactamente una oferta por celda y
+       en el mismo orden (primero toda la fila del mes, después la del
+       trimestre, después la del semestre).
+
+       En el JSON los precios van SIN puntos ni signo peso: $150.000 → "150000".
+
+       La lista completa de lo que hay que tocar al cambiar precios o planes
+       está en el comentario "CÓMO CAMBIAR PRECIOS O PLANES", justo encima de
+       la tabla. Búscalo ahí antes de editar nada.
+
+       Si un precio del JSON no coincide con el visible, Google trata el
+       marcado como engañoso y deja de mostrarlo: ante la duda, borra el
+       "hasOfferCatalog" completo antes que dejarlo con precios viejos.
+
+       El "sameAs" ya tiene el Instagram y la ficha de Google Business Profile.
+       El enlace de la ficha (maps.google.com/?cid=4745653765668886483) es el
+       permanente: los links de "Compartir" de Maps caducan, este no.
+
+       (aggregateRating con estrellas solo cuando tengas reseñas reales;
+        inventarlas es motivo de penalización manual de Google)
+       ==================================================================== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": [
+          "HealthAndBeautyBusiness",
+          "ExerciseGym"
+        ],
+        "@id": "https://scenciapilates.cl/#estudio",
+        "name": "Scencia Pilates",
+        "alternateName": [
+          "Scencia Pilates Estudio",
+          "Scencia"
+        ],
+        "description": "Estudio de pilates reformer en Vitacura, Santiago. Clases de 50 minutos, planes de 4 a 16 clases al mes y primera clase de prueba sin costo.",
+        "url": "https://scenciapilates.cl/",
+        "image": "https://scenciapilates.cl/assets/og-scencia.jpg",
+        "logo": "https://scenciapilates.cl/assets/logo-scencia.png",
+        "email": "scenciapilates@gmail.com",
+        "telephone": "+56930267255",
+        "sameAs": [
+          "https://www.instagram.com/scenciapilates/",
+          "https://maps.google.com/?cid=4745653765668886483"
+        ],
+        "priceRange": "$$",
+        "currenciesAccepted": "CLP",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Planes de pilates reformer",
+          "url": "https://scenciapilates.cl/#planes",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "4 clases al mes · Mes",
+              "price": "56000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "8 clases al mes · Mes",
+              "price": "103000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "12 clases al mes · Mes",
+              "price": "134000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "16 clases al mes · Mes",
+              "price": "155000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "4 clases al mes · Trimestre",
+              "price": "150000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "8 clases al mes · Trimestre",
+              "price": "280000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "12 clases al mes · Trimestre",
+              "price": "360000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "16 clases al mes · Trimestre",
+              "price": "420000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "4 clases al mes · Semestre",
+              "price": "270000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "8 clases al mes · Semestre",
+              "price": "495000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "12 clases al mes · Semestre",
+              "price": "640000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "16 clases al mes · Semestre",
+              "price": "745000",
+              "priceCurrency": "CLP",
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Gerónimo de Alderete 1070",
+          "addressLocality": "Vitacura",
+          "addressRegion": "Región Metropolitana",
+          "addressCountry": "CL"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -33.3939081,
+          "longitude": -70.5621447
+        },
+        "hasMap": "https://maps.google.com/?cid=4745653765668886483",
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Vitacura"
+          },
+          {
+            "@type": "City",
+            "name": "Las Condes"
+          },
+          {
+            "@type": "City",
+            "name": "Lo Barnechea"
+          },
+          {
+            "@type": "City",
+            "name": "Santiago"
+          }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Wednesday",
+              "Friday"
+            ],
+            "opens": "07:00",
+            "closes": "12:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Tuesday",
+              "Thursday"
+            ],
+            "opens": "08:00",
+            "closes": "12:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "17:00",
+            "closes": "21:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Friday",
+            "opens": "17:00",
+            "closes": "19:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "09:00",
+            "closes": "13:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "00:00",
+            "closes": "00:00"
+          }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://scenciapilates.cl/#sitio",
+        "url": "https://scenciapilates.cl/",
+        "name": "Scencia Pilates Estudio",
+        "inLanguage": "es-CL",
+        "publisher": {
+          "@id": "https://scenciapilates.cl/#estudio"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://scenciapilates.cl/#pagina",
+        "url": "https://scenciapilates.cl/",
+        "name": "Scencia Pilates Estudio · Pilates Reformer en Vitacura",
+        "description": "Estudio de pilates reformer en Vitacura, Santiago. Planes de 4 a 16 clases al mes y horarios de lunes a sábado. Agenda tu primera clase de prueba, sin costo.",
+        "isPartOf": {
+          "@id": "https://scenciapilates.cl/#sitio"
+        },
+        "about": {
+          "@id": "https://scenciapilates.cl/#estudio"
+        },
+        "inLanguage": "es-CL"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://scenciapilates.cl/#faq",
+        "isPartOf": {
+          "@id": "https://scenciapilates.cl/#pagina"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Qué tipo de pilates se practica en Scencia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trabajamos exclusivamente pilates reformer, en clases de 50 minutos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Tiene costo la primera clase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. La primera clase de prueba es sin costo, para que conozcas el estudio y el trabajo en reformer antes de tomar un plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo reservo mi hora?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puedes comprar tu plan en el estudio o desde nuestra aplicación, y las reservas se gestionan siempre desde la app. Nosotras te ayudamos a registrarte cuando vengas a tu primera clase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué pasa si no puedo asistir a una clase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puedes cancelar desde la aplicación. Las cancelaciones con menos de 2 horas de anticipación descuentan la clase del plan."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito experiencia previa en pilates?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. No necesitas experiencia previa: las clases se adaptan a tu nivel desde el primer día y te guiamos en cada ejercicio."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué ropa debo usar y qué tengo que llevar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ropa cómoda de deporte. Lo ideal es venir con calcetines antideslizantes, que son los que se usan sobre el reformer."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuántas personas hay por clase?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Las clases son de máximo 8 personas, para que puedas recibir corrección y acompañamiento durante toda la sesión."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Puedo tomar clases si estoy embarazada o tengo una lesión?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, en ambos casos. Adaptamos y dirigimos los ejercicios según tu condición. Cuéntanos tu situación antes de la clase para acompañarte de la mejor manera."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Hay estacionamiento cerca del estudio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Hay estacionamiento en el mismo strip center y también en las calles del sector: Fernando de Argüello, Juan de Escaray y Pedro de Arbolancha, entre otras."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    /* Permite entrar con un enlace directo (scenciapilates.cl/#planes) y que
+       el bloque llegue abierto. Los botones funcionan solos: son <details>. */
+    (function () {
+      function abrir() {
+        if (!location.hash) return;
+        var bloque = document.querySelector(location.hash);
+        if (bloque && bloque.tagName === 'DETAILS') bloque.open = true;
+      }
+      abrir();
+      window.addEventListener('hashchange', abrir);
+    })();
+  </script>
+
+</body>
+</html>
