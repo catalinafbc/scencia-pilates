@@ -1,4 +1,9 @@
-# Netlify · cabeceras. Este archivo se sube junto al index.html.
+# Netlify · cabeceras.
+#
+# EL NOMBRE IMPORTA: el archivo tiene que llamarse exactamente "_headers",
+# sin punto ni extensión, y estar junto al index.html. Antes se llamaba
+# "_headers.txt" y por eso Netlify lo ignoraba por completo: el sitio se
+# publicaba sin ninguna de estas reglas.
 
 # Imágenes y fuentes: caché de 1 año (mejora Core Web Vitals en visitas repetidas).
 /assets/*

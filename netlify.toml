@@ -1,0 +1,12 @@
+# Netlify · configuración del sitio.
+#
+# Este sitio es HTML puro: no hay que compilar nada. Estas dos líneas se lo
+# dicen a Netlify para que, al conectarlo con GitHub, publique la carpeta tal
+# cual y no se quede esperando un paso de construcción que no existe.
+#
+# Las cabeceras (caché y seguridad) NO van aquí: viven en el archivo _headers,
+# que está al lado de este.
+
+[build]
+  publish = "."
+  command = ""
