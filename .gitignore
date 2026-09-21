@@ -1,2 +1,10 @@
 # macOS: archivos invisibles que crea el Finder. No son parte del sitio.
 .DS_Store
+
+# Fotos originales de la galería, tal como salieron de la cámara: 33 MB que
+# el sitio no usa. De ellas se generan las derivadas de assets/galeria/, y
+# esas sí van al repositorio. Se dejan fuera por dos razones: no hay que
+# publicarlas en Netlify (la carpeta entera se sube tal cual), y un archivo
+# grande metido en el historial de git ya no se saca sin reescribirlo.
+# Quien necesite regenerar las derivadas, que pida los originales.
+assets/galeria/originales/

@@ -241,6 +241,152 @@
 
     #planes-horarios:has(.desplegable[open]){ padding-bottom: 70px; }
 
+    /* ---------- Galería del estudio ----------
+       La galería es un tercer desplegable, hermano de Planes y Horarios: es
+       el mismo <details>, así que hereda el botón sin una línea de CSS extra.
+       Lo propio de acá es la grilla de miniaturas y el visor de foto grande.
+
+       Las miniaturas ya vienen recortadas a 3:4 desde el disco
+       (assets/galeria/NN-mini.webp). El aspect-ratio de abajo no las recorta:
+       reserva el alto correcto antes de que la imagen cargue, para que la
+       página no pegue un salto. Si algún día cambias la proporción de los
+       recortes, hay que cambiarla también aquí. */
+    .galeria{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 30px auto 0;
+      max-width: 860px;
+    }
+
+    /* Cada miniatura es un <button>, no un <a>: no lleva a otra página, abre
+       el visor. Escrito así se entiende con teclado y con lector de pantalla. */
+    .galeria button{
+      display: block;
+      padding: 0;
+      border: 0;
+      background: none;
+      border-radius: var(--radio);
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+
+    .galeria img{
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      transition: transform .45s ease, opacity .25s ease;
+    }
+
+    .galeria button:hover img,
+    .galeria button:focus-visible img{ transform: scale(1.05); opacity: .9; }
+
+    .galeria button:focus-visible{
+      outline: 2px solid var(--tinta);
+      outline-offset: 3px;
+    }
+
+    /* ---------- Visor de foto ampliada ----------
+       Es un <dialog>: el navegador se encarga solo de cerrarlo con Esc, de
+       dejar el foco atrapado adentro mientras está abierto y de dibujarlo
+       sobre todo lo demás, incluido el botón flotante de WhatsApp. Por eso
+       acá no hay ningún z-index que calzar. */
+    .visor{
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .visor::backdrop{ background: rgba(35, 25, 20, .97); }
+
+    /* El marco se posiciona con inset, no con flex. Así tiene un ancho y un
+       alto definidos —los del visor menos el aire de los botones y del pie—
+       y la foto de adentro se puede medir contra ellos.
+
+       Con flex no funcionaba: un ítem flex no se encoge por debajo del ancho
+       natural de su contenido, así que la foto (1205px de ancho real) se
+       negaba a achicarse, estiraba el diálogo y en celular se salía por el
+       costado junto con el texto del pie. */
+    .visor-marco{
+      position: absolute;
+      inset: 56px 16px 64px;
+    }
+
+    /* El <picture> se saca del medio con display:contents, para que la <img>
+       quede como hija directa del marco y el centrado la tome a ella. */
+    .visor picture{ display: contents; }
+
+    /* La <img> llena el marco completo y object-fit:contain encaja la foto
+       adentro sin deformarla, centrada. Lo que sobra de la caja queda
+       transparente, así que se ve igual que una foto ajustada a la pantalla,
+       y da lo mismo si la foto es vertical (once de las doce) o apaisada. */
+    .visor img{
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Los tres controles comparten forma; cambia solo dónde se posan. */
+    .visor-boton{
+      position: absolute;
+      border: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--velo);
+      color: var(--tinta);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .25s ease;
+    }
+
+    .visor-boton:hover{ background: var(--crema); }
+
+    .visor-boton:focus-visible{
+      outline: 2px solid var(--crema);
+      outline-offset: 3px;
+    }
+
+    .visor-cerrar{ top: 14px; right: 14px; }
+    .visor-antes{ left: 14px; top: 50%; transform: translateY(-50%); }
+    .visor-despues{ right: 14px; top: 50%; transform: translateY(-50%); }
+
+    .visor-pie{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18px;
+      margin: 0;
+      padding: 0 20px;
+      text-align: center;
+      color: var(--crema);
+      font-size: 12px;
+      letter-spacing: .06em;
+    }
+
+    @media (max-width: 600px){
+      .galeria{ grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .visor-marco{ inset: 52px 10px 58px; }
+      .visor-antes{ left: 8px; }
+      .visor-despues{ right: 8px; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .galeria img{ transition: none; }
+      .galeria button:hover img,
+      .galeria button:focus-visible img{ transform: none; }
+    }
+
     .titulo{
       font-family: "Cormorant Garamond", Georgia, serif;
       font-size: clamp(28px, 4.5vw, 40px);
@@ -1003,11 +1149,15 @@
   </header>
 
   <main>
-    <!-- ========================= PLANES Y HORARIOS =========================
-         Los dos botones son el único control: cada uno es el summary de su
+    <!-- ================= PLANES, HORARIOS Y GALERÍA =================
+         Los tres botones son el único control: cada uno es el summary de su
          details y despliega la información justo debajo. El contenido está
-         siempre presente en el HTML, así que Google lo indexa completo. -->
-    <section class="seccion contenedor" id="planes-horarios" aria-label="Planes y horarios">
+         siempre presente en el HTML, así que Google lo indexa completo.
+
+         El id de la sección sigue siendo "planes-horarios" aunque ahora
+         tenga tres botones: cambiarlo rompería cualquier enlace externo que
+         apunte a scenciapilates.cl/#planes-horarios. -->
+    <section class="seccion contenedor" id="planes-horarios" aria-label="Planes, horarios y galería del estudio">
       <div class="acciones">
 
         <details class="desplegable" id="planes">
@@ -1169,6 +1319,137 @@
               <div class="reservas">
                 <h3 class="reservas-titulo">Reservas y planes</h3>
                 <p>Puedes comprar tu plan en el estudio o desde nuestra aplicación, y las reservas se gestionan siempre desde la app. Nosotras te ayudamos a registrarte cuando vengas a tu primera clase.</p>
+              </div>
+          </div>
+        </details>
+
+        <details class="desplegable" id="galeria">
+          <summary><h2>Galería<span class="solo-lectores"> del estudio</span></h2></summary>
+          <div class="cuerpo">
+
+              <!-- ================= CÓMO CAMBIAR LAS FOTOS =================
+                   Las doce fotos viven en assets/galeria/. De cada una hay
+                   cuatro archivos:
+
+                     NN-mini.webp / NN-mini.jpg   miniatura de la grilla, 700x933
+                     NN.webp      / NN.jpg        foto ampliada, lado mayor 1600
+
+                   Los originales sin tocar NO están en el repositorio: son
+                   33 MB que el sitio no usa y que no hay por qué publicar.
+                   Viven en el computador de quien armó la galería, en
+                   assets/galeria/originales/, que está en el .gitignore.
+                   Si hay que regenerar las derivadas, hay que pedirlos.
+
+                   NO REUTILICES UN NOMBRE AL CAMBIAR UNA FOTO. El archivo
+                   _headers cachea /assets/* por un año con "immutable", así
+                   que quien ya visitó el sitio seguiría viendo la foto vieja
+                   durante meses. Usa un número nuevo (13, 14...) y cámbialo
+                   también acá abajo.
+
+                   En cada botón, data-full es la foto ampliada en webp y
+                   data-full-jpg el respaldo. El alt de la miniatura es lo que
+                   se lee en el pie del visor, así que escríbelo pensando en
+                   alguien que no ve la foto. ==========================
+              -->
+
+              <div class="galeria">
+
+                <button type="button" data-full="assets/galeria/01.webp" data-full-jpg="assets/galeria/01.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/01-mini.webp" type="image/webp">
+                    <img src="assets/galeria/01-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="La sala principal del estudio, con los reformers en hilera sobre el piso de madera">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/02.webp" data-full-jpg="assets/galeria/02.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/02-mini.webp" type="image/webp">
+                    <img src="assets/galeria/02-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Estantería del estudio con pelotas, aros de pilates, mancuernas y colchonetas ordenadas">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/03.webp" data-full-jpg="assets/galeria/03.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/03-mini.webp" type="image/webp">
+                    <img src="assets/galeria/03-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Un reformer en primer plano, frente a la pared que dice Tonifica tu cuerpo, calma tu mente">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/04.webp" data-full-jpg="assets/galeria/04.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/04-mini.webp" type="image/webp">
+                    <img src="assets/galeria/04-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Reformers junto al ventanal, con vista a los edificios del barrio">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/05.webp" data-full-jpg="assets/galeria/05.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/05-mini.webp" type="image/webp">
+                    <img src="assets/galeria/05-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="La sala vista desde el fondo, con los reformers alineados frente al ventanal">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/06.webp" data-full-jpg="assets/galeria/06.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/06-mini.webp" type="image/webp">
+                    <img src="assets/galeria/06-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="La recepción del estudio, con el logo de Scencia en la pared y una mesa blanca">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/07.webp" data-full-jpg="assets/galeria/07.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/07-mini.webp" type="image/webp">
+                    <img src="assets/galeria/07-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="El pasillo de entrada, con una planta y repisas, y la sala al fondo">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/08.webp" data-full-jpg="assets/galeria/08.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/08-mini.webp" type="image/webp">
+                    <img src="assets/galeria/08-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Una clase en curso: alumnas de pie sobre los reformers, guiadas por la instructora">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/09.webp" data-full-jpg="assets/galeria/09.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/09-mini.webp" type="image/webp">
+                    <img src="assets/galeria/09-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="La fachada del estudio desde la calle, con el ventanal que deja ver la sala">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/10.webp" data-full-jpg="assets/galeria/10.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/10-mini.webp" type="image/webp">
+                    <img src="assets/galeria/10-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Una clase en curso: alumnas recostadas en los reformers junto al ventanal">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/11.webp" data-full-jpg="assets/galeria/11.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/11-mini.webp" type="image/webp">
+                    <img src="assets/galeria/11-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Un grupo de alumnas conversando en la sala antes de empezar la clase">
+                  </picture>
+                </button>
+
+                <button type="button" data-full="assets/galeria/12.webp" data-full-jpg="assets/galeria/12.jpg">
+                  <picture>
+                    <source srcset="assets/galeria/12-mini.webp" type="image/webp">
+                    <img src="assets/galeria/12-mini.jpg" width="700" height="933" loading="lazy" decoding="async"
+                         alt="Alumnas de pie sobre los reformers, con los brazos extendidos durante un ejercicio">
+                  </picture>
+                </button>
+
               </div>
           </div>
         </details>
@@ -1672,6 +1953,23 @@
   }
   </script>
 
+  <!-- Visor de la galería. Vive fuera del <main> a propósito: un <dialog> se
+       dibuja en una capa aparte, encima de toda la página, así que da lo
+       mismo dónde esté escrito. Nace vacío y el script de abajo lo llena con
+       la foto que corresponda. -->
+  <dialog class="visor" id="visor" aria-label="Foto ampliada del estudio">
+    <div class="visor-marco">
+      <picture>
+        <source id="visor-webp" srcset="" type="image/webp">
+        <img id="visor-img" src="" alt="">
+      </picture>
+    </div>
+    <button type="button" class="visor-boton visor-cerrar" id="visor-cerrar" aria-label="Cerrar">&times;</button>
+    <button type="button" class="visor-boton visor-antes" id="visor-antes" aria-label="Foto anterior">&lsaquo;</button>
+    <button type="button" class="visor-boton visor-despues" id="visor-despues" aria-label="Foto siguiente">&rsaquo;</button>
+    <p class="visor-pie" id="visor-pie"></p>
+  </dialog>
+
   <script>
     /* Permite entrar con un enlace directo (scenciapilates.cl/#planes) y que
        el bloque llegue abierto. Los botones funcionan solos: son <details>. */
@@ -1683,6 +1981,62 @@
       }
       abrir();
       window.addEventListener('hashchange', abrir);
+    })();
+
+    /* Galería: cada miniatura abre el visor con la foto grande. El <dialog>
+       ya aporta el cierre con Esc y el foco atrapado adentro, así que acá
+       solo hay que llenar la imagen y moverse entre las doce.
+
+       Si el navegador es tan viejo que no conoce <dialog>, el script se
+       retira y las miniaturas quedan como imágenes normales: la galería se
+       ve igual, simplemente no amplía. */
+    (function () {
+      var visor = document.getElementById('visor');
+      if (!visor || !visor.showModal) return;
+
+      var grilla = document.querySelector('.galeria');
+      if (!grilla) return;
+
+      var webp    = document.getElementById('visor-webp');
+      var imagen  = document.getElementById('visor-img');
+      var pie     = document.getElementById('visor-pie');
+      var botones = [].slice.call(grilla.querySelectorAll('button'));
+      var actual  = 0;
+
+      function mostrar(i) {
+        actual = (i + botones.length) % botones.length;
+        var boton = botones[actual];
+        var mini  = boton.querySelector('img');
+        webp.srcset     = boton.getAttribute('data-full');
+        imagen.src      = boton.getAttribute('data-full-jpg');
+        imagen.alt      = mini.alt;
+        pie.textContent = mini.alt;
+      }
+
+      botones.forEach(function (boton, i) {
+        boton.addEventListener('click', function () {
+          mostrar(i);
+          visor.showModal();
+        });
+      });
+
+      document.getElementById('visor-cerrar').addEventListener('click', function () { visor.close(); });
+      document.getElementById('visor-antes').addEventListener('click', function () { mostrar(actual - 1); });
+      document.getElementById('visor-despues').addEventListener('click', function () { mostrar(actual + 1); });
+
+      visor.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') mostrar(actual - 1);
+        if (e.key === 'ArrowRight') mostrar(actual + 1);
+      });
+
+      /* Un clic en el fondo oscuro, fuera de la foto, cierra el visor. */
+      visor.addEventListener('click', function (e) {
+        if (e.target === visor || e.target.className === 'visor-marco') visor.close();
+      });
+
+      /* Al cerrar, el foco vuelve a la miniatura desde donde se abrió, para
+         que quien navega con teclado no quede perdido arriba de la página. */
+      visor.addEventListener('close', function () { botones[actual].focus(); });
     })();
   </script>
 
